@@ -1,3 +1,8 @@
+
+:root {
+    --a:0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -87,6 +92,13 @@ body {
     border-radius: 5px;
     background-color: #252525;
     position: relative;
+    transition: all 0.5s;
+}
+
+.card:hover {
+    background-color: rgb(51, 51, 51);
+    cursor: pointer;
+    --a: 1;
 }
 
 .card>* {
@@ -111,11 +123,11 @@ body {
     position: absolute;
     top: 168px;
     right: 17px;
-    opacity: 0;
+    opacity: var(--a);
     transition: all 1s ease-out;
 }
 
-.buttons>* {
+.buttons > * {
     margin: 0 16px;
 }
 
@@ -176,6 +188,7 @@ body {
 
 .hamburger {
     display: none;
+    cursor: pointer;
 }
 
 .hamburger-icons {
@@ -277,6 +290,19 @@ body {
     padding: 0 12px;
 }
 
+.volume {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.range input {
+    cursor: pointer;
+}
+
 .abovebar {
     display: flex;
     justify-content: space-between;
@@ -287,7 +313,7 @@ body {
     display: none;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1350px) {
     .left {
         /* background-color: red; */
         position: absolute;
@@ -298,8 +324,9 @@ body {
         background-color: black;
         padding: 0;
     }
-    
-    .songinfo, .songtime {
+
+    .songinfo,
+    .songtime {
         width: auto;
     }
 
@@ -309,6 +336,14 @@ body {
         right: 31px;
         top: 25px;
         width: 29px;
+    }
+
+    .timeVol {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        gap: 13px;
     }
 
     .right {
@@ -336,12 +371,13 @@ body {
     }
 
     .card {
-        width: 90vw;
+        width: 44vw;
     }
 
     .cardCantainer {
         margin: 0;
         justify-content: center;
+        /* padding-bottom: 23px; */
     }
 
     .abovebar {
@@ -354,4 +390,19 @@ body {
     /* .abovebar .songinfo {
         font-size: 14px;
     } */
+
+    .cardCantainer {
+        max-height: 51vh;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .card {
+        width: auto;
+    }
+
+    
+
 }
